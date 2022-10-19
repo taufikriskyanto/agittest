@@ -1,0 +1,126 @@
+{
+	"info": {
+		"_postman_id": "4b604900-dbc7-486c-a89e-5222b2606b53",
+		"name": "Agit Test",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "7113083"
+	},
+	"item": [
+		{
+			"name": "SaveBooks",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id_buku\" : \"A0003\",\r\n    \"judul\" : \"Harry Jumat dan Si Buta\",\r\n    \"pengarang\" : \"J.K Rowling\",\r\n    \"penerbit\" : \"Gramedia\",\r\n    \"tebal_buku\" :\"385 Halaman\",\r\n    \"tanggal_terbit\" : \"29 June 1997\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8870/books/save",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8870",
+					"path": [
+						"books",
+						"save"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "findAll",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8870/books/findAll?status=1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8870",
+					"path": [
+						"books",
+						"findAll"
+					],
+					"query": [
+						{
+							"key": "status",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"peminjam\" : \"Donny\",\r\n    \"tanggal_pinjam\" : \"20 oct 2022\",\r\n    \"tanggal_kembali\" : \"10 oct 2022\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8870/books/update?idbooks=A0002",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8870",
+					"path": [
+						"books",
+						"update"
+					],
+					"query": [
+						{
+							"key": "idbooks",
+							"value": "A0002"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8870/books/delete?idbooks=A0003",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8870",
+					"path": [
+						"books",
+						"delete"
+					],
+					"query": [
+						{
+							"key": "idbooks",
+							"value": "A0003"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
